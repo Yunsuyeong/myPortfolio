@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import Head from "next/head";
-import Header from "../components/header";
+import Header from "../../components/header";
 
-const Home: NextPage = () => {
+const Study: NextPage = () => {
   return (
     <div className="w-screen h-screen flex flex-col gap-10 justify-center items-center bg-green-200">
       <Head>
-        <title>YSY's site</title>
+        <title>YSY's Study</title>
       </Head>
       <Header />
       <div className="flex flex-col items-center">
@@ -19,4 +19,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Study;
