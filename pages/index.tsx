@@ -9,11 +9,11 @@ const Home: NextPage = () => {
         <title>YSY's site</title>
       </Head>
       <Header />
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col gap-10 justify-center items-center">
         <h1 className="text-black text-3xl font-extrabold">Hello!</h1>
-        <h2 className="text-gray-900 text-2xl font-bold">
-          My name is Suyeong Yun.
-        </h2>
+        <span className="text-gray-900 text-2xl font-bold">
+          This is My personal portfolio site!
+        </span>
       </div>
     </div>
   );
