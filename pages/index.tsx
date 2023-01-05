@@ -4,7 +4,7 @@ import Header from "../components/header";
 
 const Home: NextPage = () => {
   return (
-    <div className="w-screen h-screen flex flex-col gap-10 justify-center items-center bg-green-200">
+    <div className="w-screen h-screen flex flex-col gap-10 justify-center items-center bg-blue-200">
       <Head>
         <title>YSY's site</title>
       </Head>

@@ -4,12 +4,12 @@ import Header from "../../components/header";
 
 const About: NextPage = () => {
   return (
-    <div className="w-screen h-screen flex flex-col gap-10 justify-start items-center bg-green-200">
+    <div className="w-screen h-screen flex flex-col gap-6 justify-start items-center bg-blue-200">
       <Head>
         <title>About</title>
       </Head>
       <Header />
-      <div className="pt-24 flex items-center gap-6">
+      <div className="pt-12 flex items-center gap-6">
         <svg
           className="w-12 h-12"
           fill="gray"
@@ -27,15 +27,32 @@ const About: NextPage = () => {
         </svg>
         <h1 className="text-black text-[36px] font-extrabold">ABOUT</h1>
       </div>
-      <div className="flex flex-col items-center pt-12">
-        <span className="text-gray-900 text-2xl font-bold">
-          My name is Suyeong Yun. <br />
-          <br />
-          I am attending Incheon National University.
-          <br />
-          <br />
-          I'm interested in Web programming. (frontend, backend)
-        </span>
+      <div className="w-2/3 h-1/2 pt-8 grid grid-cols-2 text-center bg-gray-100">
+        <div className="flex flex-col gap-4">
+          <span className="text-3xl font-semibold">이름 (name)</span>
+          <p className="text-lg font-medium">
+            윤수영 <br /> Yun Suyeong
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <span className="text-3xl font-semibold">생년월일 (Birth)</span>
+          <p className="text-lg font-medium">1997-12-18</p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <span className="text-3xl font-semibold">학력 (Academic Career)</span>
+          <p className="text-lg font-medium">
+            인천대학교(2016~) <br />
+            Incheon National University(2016~)
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <span className="text-3xl font-semibold">전공 (Major)</span>
+          <p className="text-lg font-medium">
+            일어일문학과, 컴퓨터공학과(복수전공) <br />
+            Department of Japanese Literature <br />
+            Department of Computer Science(Double Major)
+          </p>
+        </div>
       </div>
     </div>
   );

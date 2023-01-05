@@ -4,12 +4,12 @@ import Header from "../../components/header";
 
 const Work: NextPage = () => {
   return (
-    <div className="w-screen h-screen flex flex-col gap-10 justify-start items-center bg-green-200">
+    <div className="w-screen h-screen flex flex-col gap-10 justify-start items-center bg-blue-200">
       <Head>
         <title>YSY's Work</title>
       </Head>
       <Header />
-      <div className="pt-24 flex items-center gap-6">
+      <div className="pt-12 flex items-center gap-6">
         <svg
           className="w-12 h-12"
           fill="gray"
