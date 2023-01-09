@@ -1,10 +1,11 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Header from "../../components/header";
 
 const Work: NextPage = () => {
   return (
-    <div className="w-screen h-screen flex flex-col gap-10 justify-start items-center bg-blue-200">
+    <div className="w-screen h-full flex flex-col gap-10 justify-start items-center bg-blue-200">
       <Head>
         <title>YSY's Work</title>
       </Head>
@@ -27,15 +28,43 @@ const Work: NextPage = () => {
         </svg>
         <h1 className="text-black text-[36px] font-extrabold">WORK</h1>
       </div>
-      <div className="flex flex-col items-center pt-12">
-        <span className="text-gray-900 text-2xl font-bold">
-          My name is Suyeong Yun. <br />
-          <br />
-          I am attending Incheon National University.
-          <br />
-          <br />
-          I'm interested in Web programming. (frontend, backend)
-        </span>
+      <div className="w-2/3 flex flex-col justify-center gap-5">
+        <div className="flex flex-col justify-center gap-2 border-white border-2 px-6 py-2">
+          <h2 className="font-bold text-[28px] text-center">
+            1. Portfolio Site
+          </h2>
+          <img src="PortfolioImg.avif" className="w-72 h-72 pt-4" />
+          <div className="text-[20px]">
+            <span>GITHUB : </span>
+            <Link
+              legacyBehavior
+              href="https://github.com/Yunsuyeong/myPortfolio"
+            >
+              <a className="font-semibold">
+                <span>https://github.com/Yunsuyeong/myPortfolio</span>
+              </a>
+            </Link>
+          </div>
+          <p className="text-[16px]">
+            현재까지 공부했던 내용과 개인 프로젝트로 진행한 내용을 모아서 정리해
+            놓은 개인용 사이트입니다. (현재 보고 있는 사이트입니다)
+          </p>
+        </div>
+        <div className="flex flex-col justify-center items-center border-white border-2">
+          <h2 className="font-bold text-[28px] text-center">2. XXXXXXXXXX</h2>
+        </div>
+        <div className="flex flex-col justify-center items-center border-white border-2">
+          <h2 className="font-bold text-[28px] text-center">3. XXXXXXXXXX</h2>
+        </div>
+        <div className="flex flex-col justify-center items-center border-white border-2">
+          <h2 className="font-bold text-[28px] text-center">4. XXXXXXXXXX</h2>
+        </div>
+        <div className="flex flex-col justify-center items-center border-white border-2">
+          <h2 className="font-bold text-[28px] text-center">5. XXXXXXXXXX</h2>
+        </div>
+        <div className="flex flex-col justify-center items-center border-white border-2">
+          <h2 className="font-bold text-[28px] text-center">6. XXXXXXXXXX</h2>
+        </div>
       </div>
     </div>
   );
