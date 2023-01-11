@@ -40,7 +40,7 @@ const Work: NextPage = () => {
               legacyBehavior
               href="https://github.com/Yunsuyeong/myPortfolio"
             >
-              <a className="font-semibold">
+              <a target="_blank" className="font-semibold">
                 <span>https://github.com/Yunsuyeong/myPortfolio</span>
               </a>
             </Link>
