@@ -30,9 +30,7 @@ const About: NextPage = () => {
       <div className="w-2/3 h-[400px] py-8 grid grid-cols-2 text-center bg-gray-100">
         <div className="flex flex-col gap-4">
           <span className="text-3xl font-semibold">이름 (name)</span>
-          <p className="text-lg font-medium">
-            윤수영 <br /> Yun Suyeong
-          </p>
+          <p className="text-lg font-medium">윤수영 (Yun Suyeong)</p>
         </div>
         <div className="flex flex-col gap-4">
           <span className="text-3xl font-semibold">생년월일 (Birth)</span>
