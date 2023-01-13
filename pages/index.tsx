@@ -32,25 +32,25 @@ const Home: NextPage = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ type: "keyframes", duration: 1.5 }}
-            className="w-screen h-screen flex flex-col gap-10 items-center pt-8 bg-blue-200"
+            className="w-screen h-screen sm:h-screen flex flex-col gap-10 sm:gap-5 justify-center items-center py-10 bg-blue-200"
           >
             <Head>
               <title>YSY's site</title>
             </Head>
             <Header />
-            <div className="flex flex-col gap-10 items-center">
-              <h1 className="text-black text-3xl font-extrabold">Hello!</h1>
-              <span className="text-gray-900 text-2xl font-bold">
+            <div className="flex flex-col gap-6 items-center">
+              <h1 className="text-black text-2xl sm:text-3xl font-extrabold">
+                Hello!
+              </h1>
+              <span className="text-gray-900 text-center text-xl sm:text-2xl font-bold">
                 This is My personal portfolio site!
-              </span>
-              <span className="text-gray-900 text-2xl font-bold">
-                I organized my personal projects and what I studied on this
-                site.
+                <br />I organized my personal projects and what I studied on
+                this site.
               </span>
             </div>
-            <div className="pt-6 flex items-center gap-6">
+            <div className="pt-6 flex items-center gap-4 sm:gap-6">
               <svg
-                className="w-12 h-12"
+                className="w-10 h-10 sm:w-12 sm:h-12"
                 fill="gray"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,10 +64,12 @@ const Home: NextPage = () => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <h1 className="text-black text-[36px] font-extrabold">SKILLS</h1>
+              <h1 className="text-black text-[24px] sm:text-[30px] font-extrabold">
+                SKILLS
+              </h1>
             </div>
-            <div className="w-2/3 h-[300px] flex flex-col justify-center gap-6 ">
-              <div className="flex gap-6 pl-16">
+            <div className="w-1/2 h-[300px] flex flex-col items-center justify-center gap-4 ">
+              <div className="grid grid-cols-2 sm:flex gap-6">
                 <svg
                   className="w-16 h-16"
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +91,7 @@ const Home: NextPage = () => {
                   />
                 </svg>
                 <svg
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   viewBox="-52.5 0 361 361"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="xMidYMid"
@@ -114,7 +116,7 @@ const Home: NextPage = () => {
                 </svg>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   viewBox="0 0 630 630"
                 >
                   <rect width="630" height="630" fill="#f7df1e" />
@@ -124,7 +126,7 @@ const Home: NextPage = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   viewBox="0 0 512 512"
                 >
                   <rect fill="#3178c6" height="512" rx="50" width="512" />
@@ -138,10 +140,10 @@ const Home: NextPage = () => {
                   <script />
                 </svg>
               </div>
-              <div className="flex gap-6 pl-16">
+              <div className="flex gap-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   version="1.2"
                   viewBox="0 0 442.37 270.929"
                 >
@@ -238,7 +240,7 @@ const Home: NextPage = () => {
                   </g>
                 </svg>
                 <svg
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="-11.5 -10.23174 23 20.46348"
                 >
@@ -252,7 +254,7 @@ const Home: NextPage = () => {
                 </svg>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   viewBox="0 0 207 124"
                   version="1.1"
                 >
@@ -295,10 +297,10 @@ const Home: NextPage = () => {
                   <script />
                 </svg>
               </div>
-              <div className="flex gap-6 pl-16">
+              <div className="flex gap-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   viewBox="0 0 1024 1024"
                   fill="none"
                 >
@@ -313,7 +315,7 @@ const Home: NextPage = () => {
                 </svg>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16"
+                  className="w-16 h-16"
                   fill="none"
                   viewBox="0 0 283 64"
                 >
