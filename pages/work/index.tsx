@@ -83,7 +83,7 @@ const Work: NextPage = () => {
             <motion.div
               key={index}
               initial={{ x: Window + 10 }}
-              animate={{ x: 0 }}
+              animate={{ x: -300 }}
               exit={{ x: -Window - 10 }}
               transition={{ type: "tween", duration: 1 }}
               className="absolute w-full grid grid-cols-6"
