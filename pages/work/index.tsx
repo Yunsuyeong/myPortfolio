@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "../../components/header";
 import { Works } from "../api/works";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 
 const offset = 1;
 
@@ -71,10 +70,7 @@ const Work: NextPage = () => {
           d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
         ></path>
       </svg>
-      <div
-        className="w-screen h-screen flex flex-col gap-6 items-center bg-black"
-        onClick={increaseIndex}
-      >
+      <div className="w-screen h-screen flex flex-col gap-6 items-center bg-black overflow-x-hidden">
         <div className="pt-12 flex items-center gap-6">
           <svg
             className="w-12 h-12"
