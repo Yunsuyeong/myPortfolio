@@ -26,9 +26,22 @@ const Work: NextPage = () => {
       clearTimeout(time);
     };
   }, []);
+  const variants = {
+    entry: (isBack: boolean) => ({
+      x: isBack ? -Window - 10 : Window + 10,
+    }),
+    animate: {
+      x: 0,
+    },
+    exit: (isBack: boolean) => ({
+      x: isBack ? Window + 10 : -Window - 10,
+    }),
+  };
   const [index, setIndex] = useState(0);
   const [leaving, setLeaving] = useState(false);
+  const [back, setBack] = useState(false);
   const increaseIndex = () => {
+    setBack(false);
     if (Works) {
       if (leaving) return;
       toggleLeaving();
@@ -38,6 +51,7 @@ const Work: NextPage = () => {
     }
   };
   const decreaseIndex = () => {
+    setBack(true);
     if (Works) {
       if (leaving) return;
       toggleLeaving();
@@ -90,12 +104,18 @@ const Work: NextPage = () => {
           <h1 className="text-white text-[36px] font-extrabold">WORK</h1>
         </div>
         <div className="relative w-[50vw] top-[20px] text-white">
-          <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
+          <AnimatePresence
+            initial={false}
+            custom={back}
+            onExitComplete={toggleLeaving}
+          >
             <motion.div
               key={index}
-              initial={{ x: Window + 10 }}
-              animate={{ x: 0 }}
-              exit={{ x: -Window - 10 }}
+              custom={back}
+              variants={variants}
+              initial="entry"
+              animate="animate"
+              exit="exit"
               transition={{ type: "tween", duration: 1 }}
               className="absolute w-full grid grid-cols-6"
             >
@@ -108,7 +128,7 @@ const Work: NextPage = () => {
                     <h2 className="font-bold text-[28px] text-center">
                       {work.id}. {work.title}
                     </h2>
-                    <img src={work.src} className="w-72 h-72 pt-4" />
+                    <img src={work.src} className="h-80 pt-4" />
                     <div className="text-[20px]">
                       <span>GITHUB : </span>
                       <Link legacyBehavior href={work.link}>
