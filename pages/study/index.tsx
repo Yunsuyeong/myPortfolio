@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -16,19 +17,31 @@ const Study: NextPage = () => {
     });
     const time = setTimeout(() => {
       setWindow(window.outerWidth);
-    }, 0.0000000000000000001);
+    }, 0.0000000000000000000000001);
 
     return () => {
       window.removeEventListener("resize", () => {
         setWindow(window.outerWidth);
       });
-
       clearTimeout(time);
     };
   }, []);
+  const variants = {
+    entry: (isBack: boolean) => ({
+      x: isBack ? -Window - 10 : Window + 10,
+    }),
+    animate: {
+      x: 0,
+    },
+    exit: (isBack: boolean) => ({
+      x: isBack ? Window + 10 : -Window - 10,
+    }),
+  };
   const [index, setIndex] = useState(0);
   const [leaving, setLeaving] = useState(false);
+  const [back, setBack] = useState(false);
   const increaseIndex = () => {
+    setBack(false);
     if (Studys) {
       if (leaving) return;
       toggleLeaving();
@@ -38,6 +51,7 @@ const Study: NextPage = () => {
     }
   };
   const decreaseIndex = () => {
+    setBack(true);
     if (Studys) {
       if (leaving) return;
       toggleLeaving();
@@ -90,12 +104,18 @@ const Study: NextPage = () => {
           <h1 className="text-white text-[36px] font-extrabold">STUDY</h1>
         </div>
         <div className="relative w-[50vw] top-[20px] text-white">
-          <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
+          <AnimatePresence
+            initial={false}
+            custom={back}
+            onExitComplete={toggleLeaving}
+          >
             <motion.div
+              custom={back}
               key={index}
-              initial={{ x: Window + 10 }}
-              animate={{ x: 0 }}
-              exit={{ x: -Window - 10 }}
+              variants={variants}
+              initial="entry"
+              animate="animate"
+              exit="exit"
               transition={{ type: "tween", duration: 1 }}
               className="absolute w-full grid grid-cols-6"
             >
@@ -108,8 +128,16 @@ const Study: NextPage = () => {
                     <h2 className=" font-bold text-[28px] text-center">
                       {study.id}. {study.title}
                     </h2>
-                    <img src={study.src} className="w-72 h-72 pt-4" />
-                    <div className="text-[20px]">
+                    <img src={study.src} className="h-80 pt-4" />
+                    <div className="text-[16px]">
+                      <span>Site : </span>
+                      <Link legacyBehavior href={study.site}>
+                        <a target="_blank" className="font-semibold">
+                          <span>{study.site}</span>
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="text-[16px]">
                       <span>GITHUB : </span>
                       <Link legacyBehavior href={study.link}>
                         <a target="_blank" className="font-semibold">
@@ -117,7 +145,7 @@ const Study: NextPage = () => {
                         </a>
                       </Link>
                     </div>
-                    <p className="text-[16px]">{study.description}</p>
+                    <p className="text-[20px]">{study.description}</p>
                   </motion.div>
                 )
               )}
