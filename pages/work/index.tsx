@@ -68,7 +68,9 @@ const Work: NextPage = () => {
         <title>YSY's Work</title>
       </Head>
       <Header />
-      <svg
+      <motion.svg
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ repeat: Infinity, duration: 2 }}
         fill="white"
         stroke="currentColor"
         strokeWidth="1.5"
@@ -83,8 +85,8 @@ const Work: NextPage = () => {
           strokeLinejoin="round"
           d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
         ></path>
-      </svg>
-      <div className="w-screen h-screen flex flex-col gap-6 items-center bg-black overflow-x-hidden">
+      </motion.svg>
+      <div className="w-screen h-screen flex flex-col gap-6 items-center bg-[url('../public/background.jpg')] overflow-x-hidden">
         <div className="pt-12 flex items-center gap-6">
           <svg
             className="w-12 h-12"
@@ -103,7 +105,7 @@ const Work: NextPage = () => {
           </svg>
           <h1 className="text-white text-[36px] font-extrabold">WORK</h1>
         </div>
-        <div className="relative w-[50vw] top-[20px] text-white">
+        <div className="relative w-[70vw] top-[20px] text-white">
           <AnimatePresence
             initial={false}
             custom={back}
@@ -122,22 +124,42 @@ const Work: NextPage = () => {
               {Works.slice(offset * index, offset * index + offset).map(
                 (work) => (
                   <motion.div
-                    className="relative w-[50vw] h-full flex flex-col gap-3 border-white border-2 py-6 px-4"
+                    className="relative w-[70vw] h-[60vh] flex flex-col gap-3 border-white border-2 py-6 px-4"
                     key={work.id}
                   >
                     <h2 className="font-bold text-[28px] text-center">
                       {work.id}. {work.title}
                     </h2>
-                    <img src={work.src} className="h-80 pt-4" />
-                    <div className="text-[20px]">
-                      <span>GITHUB : </span>
-                      <Link legacyBehavior href={work.link}>
-                        <a target="_blank" className="font-semibold">
-                          <span>{work.link}</span>
-                        </a>
-                      </Link>
+                    <div className="flex gap-12">
+                      <img src={work.src} className="w-[35vw] h-[45vh]" />
+                      <div className="flex flex-col gap-6 text-[16px]">
+                        <div>
+                          <span>Site : </span>
+                          <Link legacyBehavior href={work.site}>
+                            <a target="_blank" className="font-semibold">
+                              <span>{work.site}</span>
+                            </a>
+                          </Link>
+                        </div>
+                        <div>
+                          <span>GITHUB : </span>
+                          <Link legacyBehavior href={work.link}>
+                            <a target="_blank" className="font-semibold">
+                              <span>{work.link}</span>
+                            </a>
+                          </Link>
+                        </div>
+                        <p className="text-[24px]">{work.description}</p>
+                        <div className="flex flex-col items-center gap-6 text-[24px]">
+                          <span>Tools</span>
+                          <div className="flex gap-6">
+                            {work.logos?.map((logo) => (
+                              <img src={logo} width="64px" height="64px" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-[16px]">{work.description}</p>
                   </motion.div>
                 )
               )}
@@ -145,7 +167,9 @@ const Work: NextPage = () => {
           </AnimatePresence>
         </div>
       </div>
-      <svg
+      <motion.svg
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ repeat: Infinity, duration: 2 }}
         fill="white"
         stroke="currentColor"
         strokeWidth="1.5"
@@ -160,7 +184,7 @@ const Work: NextPage = () => {
           strokeLinejoin="round"
           d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
         ></path>
-      </svg>
+      </motion.svg>
     </>
   );
 };

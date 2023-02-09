@@ -7,6 +7,7 @@ export const Works = [
     link: "https://github.com/Yunsuyeong/myPortfolio",
     description:
       "A personal site that collects what I studied and made personally.",
+    logos: ["Typescript.png", "Nodejs.png", "NextJs.png", "Vercel.png"],
   },
   {
     id: 2,
@@ -18,30 +19,6 @@ export const Works = [
   },
   {
     id: 3,
-    title: "XXXXXXXXXX",
-    src: "",
-    site: "",
-    link: "",
-    description: "xxxxxxxxxx",
-  },
-  {
-    id: 4,
-    title: "XXXXXXXXXX",
-    src: "",
-    site: "",
-    link: "",
-    description: "xxxxxxxxxx",
-  },
-  {
-    id: 5,
-    title: "XXXXXXXXXX",
-    src: "",
-    site: "",
-    link: "",
-    description: "xxxxxxxxxx",
-  },
-  {
-    id: 6,
     title: "XXXXXXXXXX",
     src: "",
     site: "",

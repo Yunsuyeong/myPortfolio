@@ -9,7 +9,10 @@ const About: NextPage = () => {
         <title>YSY's Work</title>
       </Head>
       <Header />
-      <div className="w-screen h-full flex flex-col justify-center items-center gap-10 py-8 bg-black">
+      <div
+        className="w-screen h-full flex flex-col justify-center items-center gap-10 py-8
+      bg-[url('../public/background.jpg')] overflow-x-hidden"
+      >
         <div className="pt-12 flex items-center gap-6">
           <svg
             className="w-12 h-12"

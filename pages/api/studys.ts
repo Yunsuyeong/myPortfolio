@@ -6,6 +6,7 @@ export const Studys = [
     site: "https://c-netflix.vercel.app/",
     link: "https://github.com/Yunsuyeong/c_netflix",
     description: "A clone coding site that follows Netflix.",
+    logos: ["Typescript.png", "Nodejs.png", "ReactJs.png"],
   },
   {
     id: 2,
@@ -14,5 +15,6 @@ export const Studys = [
     site: "https://main--cecommerce.netlify.app/",
     link: "https://github.com/Yunsuyeong/c_ecommerce",
     description: "Using Gatsby",
+    logos: ["Typescript.png", "Nodejs.png"],
   },
 ];
